@@ -1,0 +1,105 @@
+&:host {
+	position: fixed;
+	transition-property: all;
+	border-radius: 0.5rem;
+	box-sizing: border-box;
+	padding: 1rem;
+	opacity: 0;
+	pointer-events: none;
+
+	&.growl.top.right {
+		
+		top: 2rem;
+		right: 2rem;
+		width: 20rem;
+		box-sizing: border-box;
+		transform: translate3d(~'calc(100% + 2rem)', 0px, 0px);
+
+		&.render {
+			opacity: 1;
+			transform: translate3d(0px, 0px, 0px);
+			pointer-events: auto;
+		}
+	}
+
+	&.growl.top.left {
+		
+		top: 2rem;
+		left: 2rem;
+		width: 20rem;
+		box-sizing: border-box;
+		transform: translate3d(~'calc(-100% - 2rem)', 0px, 0px);
+		opacity: 0;
+
+		&.render {
+			opacity: 1;
+			transform: translate3d(0px, 0px, 0px);
+			pointer-events: auto;
+		}
+	}
+
+	&.growl.bottom.left {
+		
+		bottom: 2rem;
+		left: 2rem;
+		width: 20rem;
+		box-sizing: border-box;
+		transform: translate3d(~'calc(-100% - 2rem)', 0px, 0px);
+		opacity: 0;
+
+		&.render {
+			opacity: 1;
+			transform: translate3d(0px, 0px, 0px);
+			pointer-events: auto;
+		}
+	}
+
+	&.growl.bottom.right {
+		
+		bottom: 2rem;
+		right: 2rem;
+		width: 20rem;
+		box-sizing: border-box;
+		transform: translate3d(~'calc(100% + 2rem)', 0px, 0px);
+		opacity: 0;
+
+		&.render {
+			opacity: 1;
+			transform: translate3d(0px, 0px, 0px);
+			pointer-events: auto;
+		}
+	}
+
+	&.snackbar.top.center {
+		top: 2rem;
+		left: ~'calc(50% - 20rem)';
+		width: 40rem;
+		box-sizing: border-box;
+		transform: translate3d(0px, ~'calc(-100% - 2rem)', 0px);
+		opacity: 0;
+		border-radius: 1rem;
+
+		&.render {
+			opacity: 1;
+			transform: translate3d(0px, 0px, 0px);
+			pointer-events: auto;
+		}
+	}
+
+	&.snackbar.bottom.center {
+		top: 2rem;
+		left: ~'calc(50% - 20rem)';
+		width: 40rem;
+		box-sizing: border-box;
+		transform: translate3d(0px, ~'calc(100% + 2rem)', 0px);
+		opacity: 0;
+		border-radius: 1rem;
+
+		&.render {
+			opacity: 1;
+			transform: translate3d(0px, 0px, 0px);
+			pointer-events: auto;
+		}
+	}
+}
+
