@@ -7,11 +7,22 @@
 	opacity: 0;
 	pointer-events: none;
 
+	&.growl {
+		width: 20rem;
+	}
+
+	&.snackbar {
+		
+		width: 20rem;
+		@media only screen and (min-width: 768px) {
+			width: 40rem;
+		}
+	}
+
 	&.growl.top.right {
 		
 		top: 2rem;
 		right: 2rem;
-		width: 20rem;
 		box-sizing: border-box;
 		transform: translate3d(~'calc(100% + 2rem)', 0px, 0px);
 
@@ -26,7 +37,6 @@
 		
 		top: 2rem;
 		left: 2rem;
-		width: 20rem;
 		box-sizing: border-box;
 		transform: translate3d(~'calc(-100% - 2rem)', 0px, 0px);
 		opacity: 0;
@@ -42,7 +52,6 @@
 		
 		bottom: 2rem;
 		left: 2rem;
-		width: 20rem;
 		box-sizing: border-box;
 		transform: translate3d(~'calc(-100% - 2rem)', 0px, 0px);
 		opacity: 0;
@@ -58,7 +67,6 @@
 		
 		bottom: 2rem;
 		right: 2rem;
-		width: 20rem;
 		box-sizing: border-box;
 		transform: translate3d(~'calc(100% + 2rem)', 0px, 0px);
 		opacity: 0;
@@ -72,12 +80,15 @@
 
 	&.snackbar.top.center {
 		top: 2rem;
-		left: ~'calc(50% - 20rem)';
-		width: 40rem;
 		box-sizing: border-box;
 		transform: translate3d(0px, ~'calc(-100% - 2rem)', 0px);
 		opacity: 0;
 		border-radius: 1rem;
+		left: ~'calc(50% - 10rem)';
+
+		@media only screen and (min-width: 768px) {
+			left: ~'calc(50% - 20rem)';
+		}
 
 		&.render {
 			opacity: 1;
@@ -87,13 +98,16 @@
 	}
 
 	&.snackbar.bottom.center {
-		top: 2rem;
-		left: ~'calc(50% - 20rem)';
-		width: 40rem;
+		bottom: 2rem;
 		box-sizing: border-box;
 		transform: translate3d(0px, ~'calc(100% + 2rem)', 0px);
 		opacity: 0;
 		border-radius: 1rem;
+		left: ~'calc(50% - 10rem)';
+
+		@media only screen and (min-width: 768px) {
+			left: ~'calc(50% - 20rem)';
+		}
 
 		&.render {
 			opacity: 1;

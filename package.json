@@ -1,11 +1,33 @@
 {
-  "name": "messages",
+  "name": "ems-web-app-messages",
   "version": "0.0.1",
+  "author": "Chris Spence (https://educationalmediasolutions.com)",
+  "description": "This angular.io module includes a component and service that can be used to render \"Growl\" or \"Snackbar\" style in-app messages.",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spencech/ems-web-app-messages.git"
+  },
+  "scripts": {
+    "publish": "git add -A . && git commit -m 'prepublish npm package' && npm version patch && ng build messages && cd dist && npm publish"
+  },
+  "keywords": [
+    "ems",
+    "educational media solutions",
+    "educational",
+    "media",
+    "solutions",
+    "web app",
+    "web application",
+    "messages",
+    "alerts",
+    "growl",
+    "snackbar"
+  ]
 }
