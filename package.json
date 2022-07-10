@@ -1,6 +1,6 @@
 {
   "name": "ems-web-app-messages",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Chris Spence (https://educationalmediasolutions.com)",
   "description": "This angular.io module includes a component and service that can be used to render \"Growl\" or \"Snackbar\" style in-app messages.",
   "peerDependencies": {
