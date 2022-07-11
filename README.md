@@ -113,9 +113,6 @@ Messages can be "stacked" and will render in the order that they were added to t
 	}
 
 
-
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
-
 ## Code scaffolding
 
 Run `ng generate component component-name --project messages` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project messages`.
