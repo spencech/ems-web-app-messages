@@ -99,6 +99,8 @@ export class MessagesComponent implements OnInit  {
   private validateMessage(message: IMessage): boolean {
     const growlPositions = [MessagePosition.BottomLeft, MessagePosition.BottomRight, MessagePosition.TopLeft, MessagePosition.TopRight];
     const snackbarPositions = [MessagePosition.TopCenter, MessagePosition.BottomCenter];
+    if(!message) return false;
+    
     if(message.type === MessageType.Growl && growlPositions.indexOf(message.position) === -1) {
       throw new Error("Growl messages must use one of the following positions: MessagePosition.BottomLeft, MessagePosition.BottomRight, MessagePosition.TopLeft, MessagePosition.TopRight")
       return false;
