@@ -22,6 +22,7 @@ export class MessagesComponent implements OnInit  {
   @Input("z-index") zIndex: number = 1000;
   @Input("transition-speed") speed: number = 0.5;
 
+
   public styles!: SafeHtml;
   public currentMessage?: IMessage;
   public queue: IMessage[] = [];
@@ -32,9 +33,10 @@ export class MessagesComponent implements OnInit  {
 
   ngOnInit(): void {
     this.service.currentMessage.subscribe(message => {
-      if(!message) return;
-      if(!this.validateMessage(message)) return;
-      this.queue.push(message);
+      if(!message && !this.currentMessage) return;
+      if(!message) this.processMessageQueue(true);
+      if(!this.validateMessage(message!)) return;
+      this.queue.push(message!);
       this.processMessageQueue();
     });
   }
@@ -63,7 +65,7 @@ export class MessagesComponent implements OnInit  {
     if(this.currentMessage && !force) return;
     await this.removeCurrentMessage();
     this.currentMessage = this.queue.shift();
-    this.classes = `${this.currentMessage?.position} ${this.currentMessage?.type}`;
+    this.classes = `${this.currentMessage?.position} ${this.currentMessage?.type} ${this.currentMessage?.classes ?? ''}`;
     await this.tick();
     this.initializeStyles();
     this.showNextMessage();

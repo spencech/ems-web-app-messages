@@ -6,5 +6,6 @@ export interface IMessage {
 	message?: string,
 	template?: TemplateRef<any>,
 	duration: number,
+	classes?: string,
 	position: MessagePosition
 }
