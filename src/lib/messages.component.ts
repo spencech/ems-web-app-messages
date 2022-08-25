@@ -8,7 +8,7 @@ import { MessagesService } from "./messages.service";
   selector: 'messages',
   template: `
     <ng-container *ngTemplateOutlet="currentMessage?.template ?? null"></ng-container>
-    <div *ngIf="!currentMessage?.template" class="message-text">{{currentMessage?.message}}</div>
+    <div *ngIf="!currentMessage?.template" class="message-text">{{sanitizer.bypassSecurityTrustHtml(currentMessage?.message || '')}}</div>
     <div class="style-container" [innerHtml]="styles"></div>
   `,
   styleUrls: [ './messages.component.less' ]
@@ -29,7 +29,7 @@ export class MessagesComponent implements OnInit  {
 
   private timeout: number = 0;
 
-  constructor(private service: MessagesService, private sanitizer: DomSanitizer) { }
+  constructor(private service: MessagesService, public sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.service.currentMessage.subscribe(message => {
