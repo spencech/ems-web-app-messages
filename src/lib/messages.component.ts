@@ -8,7 +8,7 @@ import { MessagesService } from "./messages.service";
   selector: 'messages',
   template: `
     <ng-container *ngTemplateOutlet="currentMessage?.template ?? null"></ng-container>
-    <div *ngIf="!currentMessage?.template" class="message-text">{{sanitizer.bypassSecurityTrustHtml(currentMessage?.message || '')}}</div>
+    <div *ngIf="!currentMessage?.template" class="message-text" [innerHtml]="sanitizer.bypassSecurityTrustHtml(currentMessage?.message || '')"></div>
     <div class="style-container" [innerHtml]="styles"></div>
   `,
   styleUrls: [ './messages.component.less' ]
